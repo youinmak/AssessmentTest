@@ -39,7 +39,7 @@ public class Test {
 		
 		ArrayDeque<String> myArrayDeque = new ArrayDeque<String>();
 
-		/*List<Integer> integerList = new ArrayList<Integer>();
+		List<Integer> integerList = new ArrayList<Integer>();
 
 		for (int i = 0; i < 1000000; i++) {
 			integerList.add(i);
@@ -61,7 +61,7 @@ public class Test {
 		// parallelStream.forEach((i) -> System.out.print(i));
 		long currentTimeMillis4 = System.currentTimeMillis();
 
-		System.out.println("Time Parallel : " + (currentTimeMillis4 - currentTimeMillis3));*/
+		System.out.println("Time Parallel : " + (currentTimeMillis4 - currentTimeMillis3));
 		
 		/*Path dir = Paths.get("C:/7");
 		try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir, "**.class")) { // so we don't have close()
@@ -69,7 +69,7 @@ public class Test {
 		System.out.println(path.getFileName());
 		}*/
 		
-		/*Integer y = -129; // make a wrapper
+		Integer y = -129; // make a wrapper
 		Integer x = y; // assign a second ref
 		// var to THE wrapper
 		System.out.println(y==x); // verify that they refer
@@ -77,7 +77,7 @@ public class Test {
 		y++; // unwrap, use, "rewrap"
 		y--;
 		System.out.println(x + " " + y); // print values
-		System.out.println(y==x);*/
+		System.out.println(y==x);
 		
 		/*List<String> list = new ArrayList<>();
 		
@@ -90,45 +90,49 @@ public class Test {
 		list.removeIf("42"::startsWith);*/
 		
 		List<Integer> list = Arrays.asList(1, 2, 3);
-		list.replaceAll(x -> x*2);
+		list.replaceAll(z -> z*2);
 		//list.set(1,4);
 		//System.out.println(list);
 		magic(list.stream());
-		/*List<Integer> integerList = new ArrayList<>();
+		List<Integer> integerList2 = new ArrayList<>();
 		
 		
-		integerList.add(4);
-		integerList.add(2);
-		integerList.add(6);
-		integerList.add(1);
+		integerList2.add(4);
+		integerList2.add(2);
+		integerList2.add(6);
+		integerList2.add(1);
 		Consumer<List<Integer>> methodRef1 = Collections::sort;
-		System.out.println(integerList);
-		methodRef1.accept(integerList);
-		System.out.println(integerList);
-		Collections.shuffle(integerList);
+		System.out.println(integerList2);
+		methodRef1.accept(integerList2);
+		System.out.println(integerList2);
+		Collections.shuffle(integerList2);
 		
-		System.out.println(integerList);
-		methodRef1.accept(integerList);
-		System.out.println(integerList);
+		System.out.println(integerList2);
+		methodRef1.accept(integerList2);
+		System.out.println(integerList2);
 		
 		
-		Supplier<ArrayList> methodRef4 = ArrayList::new;
+		Supplier<ArrayList<Integer>> methodRef4 = ArrayList::new;
 		
-		Supplier<String> methodRef5 = String::new;*/
+		Supplier<String> methodRef5 = String::new;
 		
-		/*
+		ArrayList<Integer> arrayList = methodRef4.get();
+		
+		String string = methodRef5.get();
+		
+		
 		
 		Set<MyMap<String, String>> myMapSet = new TreeSet<MyMap<String,String>>();
 		MyMap<String, String> myMap = new MyMap<String, String>();
-		myMapSet.add(myMap);
-	*/
+		//myMapSet.add(myMap);
+	
 		Comparator<String> c = (s1, s2) -> Integer.valueOf(s1) - Integer.valueOf(s2);
 		//Collections.sort(list, c);
 		
 		//System.out.println(list);
 		
-		/*Set<Rabbit> rabbit = new TreeSet<>();
-		rabbit.add(new Rabbit());*/
+		Set<Rabbit> rabbit = new TreeSet<>();
+		rabbit.add(new Rabbit());
 	}
 	
 	static class Rabbit{ int id; }
