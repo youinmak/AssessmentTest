@@ -19,16 +19,16 @@ import java.util.TreeSet;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
-/*import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Spliterator;
-import java.util.stream.Stream;*/
+import java.util.stream.Stream;
 
 public class Test {
 	
 	private static void magic(Stream<Integer> s) {
-		/*Optional o = s.filter(x -> x < 5).limit(3).max((x, y) -> x—y);
-		System.out.println(o.get());*/
+		Optional<Integer> max = s.filter(x -> x < 7).limit(3).max((x,y) -> x-y);
+		System.out.println(max.get());
 		}
 
 	public static void main(String[] args) throws InterruptedException, IOException {
@@ -92,8 +92,8 @@ public class Test {
 		List<Integer> list = Arrays.asList(1, 2, 3);
 		list.replaceAll(x -> x*2);
 		//list.set(1,4);
-		System.out.println(list);
-		
+		//System.out.println(list);
+		magic(list.stream());
 		/*List<Integer> integerList = new ArrayList<>();
 		
 		
