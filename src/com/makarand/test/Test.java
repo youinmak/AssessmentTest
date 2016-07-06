@@ -1,6 +1,7 @@
 package com.makarand.test;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -133,6 +134,11 @@ public class Test {
 		Set<Rabbit> rabbit = new TreeSet<>();
 		//rabbit.add(new Rabbit());
 
+		 String [] arr = new String [2];
+	        
+	      Array [] array = new Array[2];
+	      
+	      int len = array.length;
 		
 
 	}
