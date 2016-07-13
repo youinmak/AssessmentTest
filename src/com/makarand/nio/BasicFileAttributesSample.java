@@ -12,6 +12,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class BasicFileAttributesSample {
@@ -45,13 +46,25 @@ public class BasicFileAttributesSample {
 
 		final Path hybrisPath = Paths.get("C:\\postpaid\\hybris");
 		Instant start = Instant.now();
+		Stream myStream = null;
 		try (Stream<Path> walk = Files.walk(hybrisPath);
 				PrintWriter bw = new PrintWriter(new File("C:\\postpaid\\hybris\\allFileNames.txt"))) {
+			myStream = walk.flatMap(s -> Stream.of(s));
 			walk.forEach(bw::println);
 		}
 		
 		Instant end = Instant.now();
-		
+		test(path);
 		System.out.println("Execution completed in :"+ Duration.between(start, end).toMillis() +" mili seconds");
+	}
+	
+	private static void test(final Path path) throws IOException{
+		List<String> allLines = Files.readAllLines(path);
+		try(Stream<String> lines = Files.lines(path)){
+			
+		}
+		
+		
+		
 	}
 }
